@@ -57,10 +57,10 @@ html, body {
 #popup div input {
 	margin-bottom: 30px;	
 	border: none;
-	height: 30px;
 	width: 80%;
 	font-size: 20px;
 	outline: none;
+	padding: 5px 7px;
 }
 
 #popup-button {
@@ -137,6 +137,7 @@ main {
 	text-align: center;
 	margin-top: 25px;
 	margin-bottom: 35px;
+	color: #019f55;
 }
 
 #items li p {
