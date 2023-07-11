@@ -20,12 +20,16 @@ function addACard() {
 	hidePopup()
 	const cardTitle = document.createElement('h2')
 	cardTitle.innerHTML = title.value
+	title.value = ''
 	const cardUsername = document.createElement('p')
 	cardUsername.innerHTML = `Username : ${username.value}`
+	username.value = ''
 	const cardEmail = document.createElement('p')
 	cardEmail.innerHTML = `Email : ${email.value}`
+	email.value = ''
 	const cardPassword = document.createElement('p')
 	cardPassword.innerHTML = `Password : ${password.value}`
+	password.value = ''
 	const cardLi = document.createElement('li')
 	cardLi.appendChild(cardTitle)
 	cardLi.appendChild(cardUsername)
