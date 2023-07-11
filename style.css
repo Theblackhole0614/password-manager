@@ -38,6 +38,7 @@ html, body {
 	position: relative;
 	top: 5px;
 	left: 405px;
+	cursor: pointer;
 }
 
 #popup div {
@@ -167,6 +168,7 @@ main {
 	align-items: center;
 	justify-content: center;
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 #add-item span{
