@@ -74,6 +74,7 @@ html, body {
 	font-family: 'Poppins', sans-serif;
 	color: #ffffff;
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 #popup-button:hover {
