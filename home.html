@@ -8,9 +8,21 @@
 	<script defer src="script.js"></script>
 </head>
 <body>
-	<div class="background-popup">
-		<div class="popup">
-			<img src="./assets/close.svg">
+	<div id="background-popup">
+		<div id="popup">
+			<img src="./assets/close.svg" id="close-popup">
+			<div>
+				<h1>New Card</h1>
+				<span>Title</span>
+				<input type="text" id="title">
+				<span>Username</span>
+				<input type="text" id="username">
+				<span>Email</span>
+				<input type="email" id="email">
+				<span>Password</span>
+				<input type="text" id="password">
+				<button id="popup-button">Add Card</button>
+			</div>
 		</div>
 	</div>
 	<header>
@@ -22,9 +34,6 @@
 	<main>
 		<ul id="items">
 			<button id="add-item"><span>+</span></button>
-			<li>
-				<p></p>
-			</li>
 		</ul>
 	</main>
 </body>
