@@ -11,6 +11,22 @@ html, body {
 	font-family: 'Poppins', sans-serif;
 }
 
+.background-popup {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: #00000048;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup {
+	width: 450px;
+	height: 600px;
+	background-color: beige;
+}
+
 header {
 	height: 120px;
 	display: flex;
@@ -58,6 +74,18 @@ main {
 	height: 220px;
 	background-color: beige;
 	border-radius: 10px;
+	animation: append-animate .4s ease-out;
+}
+
+@keyframes append-animate {
+	from {
+		/* transform: scale(0); */
+		opacity: 0;
+	}
+	to {
+		/* transform: scale(1); */
+		opacity: 1;	
+	}
 }
 
 #add-item {
@@ -70,11 +98,13 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: 0.3s;
 }
 
 #add-item span{
 	font-size: 60px;
 	color: #019f55;
+	transition: 0.5s;
 }
 
 @media screen and (min-width: 1780px) {
@@ -113,4 +143,18 @@ main {
 		flex-direction: column;
 		align-items: baseline;
 	}
+
+	#add-item {
+		width: 300px;
+		height: 180px;
+	}
+}
+
+#add-item:hover {
+	background-color: rgba(255, 255, 255, 0.247);
+}
+
+#add-item:hover span{
+	color: #00bd65;
+	scale: 1.3;
 }
