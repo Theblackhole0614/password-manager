@@ -20,7 +20,6 @@ html, body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
 }
 
 #popup {
@@ -138,13 +137,15 @@ main {
 	font-size: 16px;
 	text-align: center;
 	margin-top: 25px;
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	color: #019f55;
 }
 
 #items li p {
 	font-size: 16px;
+	margin: 0;
 	margin-left: 30px;
+	margin-top: 20px;
 }
 
 @keyframes append-animate {
@@ -222,11 +223,35 @@ main {
 
 	#popup {
 		width: 300px;
-		height: 400px;
+		height: 430px;
 	}
 	
 	#popup img {
 		left: 255px;
+	}
+
+	#items li h2 {
+		margin-bottom: 20px;
+	}
+
+	#items li p {
+		font-size: 14px;
+		margin-top: 13px;
+	}
+
+	#popup div h1 {
+		font-size: 25px;
+		margin-bottom: 10px;
+	}
+
+	#popup div input {
+		margin-bottom: 15px;	
+		font-size: 15px;
+		padding: 5px 7px;
+	}
+
+	#popup div span {
+		font-size: 15px;
 	}
 }
 
