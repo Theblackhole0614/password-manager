@@ -27,7 +27,6 @@ function showPopup() {
 }
 
 function hidePopup() {
-	console.log('coucou')
 	backgroundPopupAddCard.classList.add("hiden");
 }
 
@@ -48,7 +47,7 @@ function addCard() {
 	cardLi.appendChild(cardUsername)
 	cardLi.appendChild(cardEmail)
 	cardLi.appendChild(cardPassword)
-	items.appendChild(cardLi)
+	cards.appendChild(cardLi)
 }
 
 // Main events

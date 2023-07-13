@@ -5,8 +5,8 @@
 	--color-green: #019F55;
 	--color-green-hover: #007e43;
 	--color-beige: #F5F5DC;
-	--color-transparent: #ffffff2a;
-	--color-transparent-hover: #ffffff3f;
+	--color-transparent: #ffffff1a;
+	--color-transparent-hover: #ffffff23;
 	--color-blur: #0000005e;
 }
 
@@ -21,13 +21,9 @@ html, body {
 	font-family: 'Poppins', sans-serif;
 }
 
-.hidden {
-	display: none;
-}
-
 /*-------------------- popup addcard --------------------*/
 
-#background-popup-addcard {
+.background-popup-addcard {
 	z-index: 2;
 	position: absolute;
 	width: 100vw;
@@ -38,12 +34,16 @@ html, body {
 	align-items: center;
 }
 
+.hiden {
+	display: none;
+}
+
 #popup-addcard {
 	z-index: 3;
 	width: 450px;
 	height: 550px;
 	background-color: var(--color-beige);
-	display: flex;
+	display: inherit;
 	flex-direction: column;
 	border-radius: 10px;
 }
@@ -112,7 +112,7 @@ html, body {
 	margin-top: 15px;
 	border: none;
 	height: 50px;
-	width: 50%;
+	width: 60%;
 	background-color: var(--color-green);
 	font-size: 25px;
 	font-family: 'Poppins', sans-serif;
@@ -160,7 +160,7 @@ main {
 	padding: 35px;
 }
 
-#items {
+#cards {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: 50px;
@@ -169,44 +169,7 @@ main {
 	padding: 0;
 }
 
-#items li {
-	margin: auto;
-	width: 400px;
-	height: 220px;
-	background-color: var(--color-beige);
-	border-radius: 10px;
-	animation: append-animate .4s ease-out;
-}
-
-#items li h2 {
-	margin: 0;
-	padding: 0;
-	font-size: 16px;
-	text-align: center;
-	margin-top: 25px;
-	margin-bottom: 30px;
-	color: var(--color-green);
-}
-
-#items li p {
-	font-size: 16px;
-	margin: 0;
-	margin-left: 30px;
-	margin-top: 20px;
-}
-
-@keyframes append-animate {
-	from {
-		/* transform: scale(0); */
-		opacity: 0;
-	}
-	to {
-		/* transform: scale(1); */
-		opacity: 1;	
-	}
-}
-
-#add-item {
+#button-addcard {
 	margin: auto;
 	width: 400px;
 	height: 220px;
@@ -220,38 +183,78 @@ main {
 	cursor: pointer;
 }
 
-#add-item span{
+#button-addcard:hover {
+	background-color: var(--color-transparent-hover);
+}
+
+#button-addcard span{
 	font-size: 60px;
 	color: var(--color-green);
 	transition: 0.5s;
 }
 
+#button-addcard:hover span{
+	color: var(--color-green-hover);
+	scale: 1.3;
+}
+
+#cards li:not(:first-child) {
+	margin: auto;
+	width: 400px;
+	height: 220px;
+	background-color: var(--color-beige);
+	border-radius: 10px;
+	animation: append-animate .4s ease-out;
+}
+
+@keyframes append-animate {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+#cards li h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 30px;
+	color: var(--color-green);
+}
+
+#cards li p {
+	font-size: 16px;
+	margin: 0;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
 @media screen and (min-width: 1780px) {
-	#items {
+	#cards {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
 @media screen and (min-width: 1330px) and (max-width: 1780px) {
-	#items {
+	#cards {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @media screen and (min-width: 880px) and (max-width: 1330px) {
-	#items {
+	#cards {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 880px) {
-	#items {
+	#cards {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 500px) {
-	#items li {
+	#cards li:not(:first-child) {
 		width: 300px;
 		height: 180px;
 	}
@@ -263,50 +266,40 @@ main {
 		align-items: baseline;
 	}
 
-	#add-item {
+	#button-addcard {
 		width: 300px;
 		height: 180px;
 	}
 
-	#popup {
+	#popup-addcard {
 		width: 300px;
-		height: 430px;
+		height: 525px;
 	}
 	
-	#popup img {
+	#closer-popup-addcard {
 		left: 255px;
 	}
 
-	#items li h2 {
-		margin-bottom: 20px;
+	#cards li h2 {
+		margin-bottom: 0px;
 	}
 
-	#items li p {
+	#cards li p {
 		font-size: 14px;
 		margin-top: 13px;
 	}
 
-	#popup div h1 {
+	#popup-addcard h2 {
 		font-size: 25px;
 		margin-bottom: 10px;
 	}
 
-	#popup div input {
+	#form-popup-addcard input {
 		margin-bottom: 15px;	
 		font-size: 15px;
-		padding: 5px 7px;
 	}
 
-	#popup div span {
+	#form-popup-addcard label {
 		font-size: 15px;
 	}
-}
-
-#add-item:hover {
-	background-color: var(--color-transparent-hover);
-}
-
-#add-item:hover span{
-	color: var(--color-green-hover);
-	scale: 1.3;
 }
