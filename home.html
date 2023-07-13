@@ -8,22 +8,24 @@
 	<script defer src="script.js"></script>
 </head>
 <body>
-	<div id="background-popup">
-		<div id="popup">
-			<img src="./assets/close.svg" id="close-popup">
-			<div>
-				<h1>New Card</h1>
-				<span>Title</span>
-				<input type="text" id="title">
-				<span>Username</span>
-				<input type="text" id="username">
-				<span>Email</span>
-				<input type="email" id="email">
-				<span>Password</span>
-				<input type="text" id="password">
-				<button id="popup-button">Add Card</button>
-			</div>
-		</div>
+	<div id="background-popup-addcard">
+		<section id="popup-addcard">
+			<button id="close-popup-addcard" aria-label="close popup">
+				<img src="./assets/close.svg" alt="close popup" aria-hidden="true">
+			</button>
+			<h2>New Card</h2>
+			<form id="popup-addcard-form">
+				<label for="title">Title</label>
+				<input type="text" id="title" placeholder="Title" name="title">
+				<label for="username">Username</label>
+				<input type="text" id="username" placeholder="Username" name="username">
+				<label for="email">Email</label>
+				<input type="email" id="email" placeholder="Email" name="email">
+				<label for="password">Password</label>
+				<input type="password" id="password" placeholder="Password" name="password">
+				<button id="popup-addcard-submit">Add Card</button>
+			</form>
+		</section>
 	</div>
 	<header>
 		<div class="logo">
@@ -32,8 +34,8 @@
 		</div>
 	</header>
 	<main>
-		<ul id="items">
-			<button id="add-item"><span>+</span></button>
+		<ul id="cards">
+			<li><button id="button-addcard"><span>+</span></button></li>
 		</ul>
 	</main>
 </body>

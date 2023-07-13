@@ -9,6 +9,13 @@ const username = document.getElementById('username')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 
+// Cancel submit  
+const addCardForm = document.getElementById('popup-addcard-form')
+
+addCardForm.addEventListener('submit', event => {
+	event.preventDefault()
+})
+
 backgroundPopup.style.display = 'none'
 popup.style.display = 'none'
 
@@ -19,16 +26,16 @@ function addAnItem() {
 function addACard() {
 	hidePopup()
 	const cardTitle = document.createElement('h2')
-	cardTitle.innerHTML = title.value
+	cardTitle.textContent = title.value
 	title.value = ''
 	const cardUsername = document.createElement('p')
-	cardUsername.innerHTML = `Username : ${username.value}`
+	cardUsername.textContent = `Username : ${username.value}`
 	username.value = ''
 	const cardEmail = document.createElement('p')
-	cardEmail.innerHTML = `Email : ${email.value}`
+	cardEmail.textContent = `Email : ${email.value}`
 	email.value = ''
 	const cardPassword = document.createElement('p')
-	cardPassword.innerHTML = `Password : ${password.value}`
+	cardPassword.textContent = `Password : ${password.value}`
 	password.value = ''
 	const cardLi = document.createElement('li')
 	cardLi.appendChild(cardTitle)
