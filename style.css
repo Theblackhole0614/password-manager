@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+
+/* 
+#CE7DA5 
+
+*/
+
 :root {
-	--color-blue: #083553;
-	--color-green: #019F55;
+	--color-blue: #493657;
+	--color-green: #CE7DA5;
 	--color-green-hover: #007e43;
-	--color-beige: #F5F5DC;
+	--color-beige: #C6B1B2;
 	--color-transparent: #ffffff1a;
 	--color-transparent-hover: #ffffff23;
 	--color-blur: #0000005e;
@@ -16,17 +22,18 @@
 
 html {
 	height: 100%;
-	/* overflow-y: hidden; */
+	overflow-y: auto;
 }
 
 body {
-	height: 100%;
+	height: 100vh;
 	margin: 0;
-	overflow-x: hidden;
+	overflow-y: auto;
 	background-color: var(--color-blue);
 	font-family: 'Poppins', sans-serif;
-	line-height: 1.5;
+	line-height: 1.4;
   	-webkit-font-smoothing: antialiased;
+	scrollbar-gutter: stable;
 }
 
 img, picture, video, canvas, svg {
@@ -46,7 +53,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .background-popup-addcard {
 	z-index: 2;
-	position: absolute;
+	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--color-blur);
@@ -60,20 +67,22 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 #popup-addcard {
-	width: 450px;
-	height: 550px;
+	padding: 2.3em;
 	background-color: var(--color-beige);
-	display: inherit;
+	display: flex;
+	position: relative;
 	flex-direction: column;
-	border-radius: 10px;
+	border-radius: 8px;
+	gap: 1.4em;
+	max-width: 95vw;
 }
 
 #closer-popup-addcard {
 	width: 40px;
 	height: 40px;
-	position: relative;
+	position: absolute;
 	top: 5px;
-	left: 405px;
+    right: 5px;
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
@@ -95,33 +104,38 @@ p, h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 	text-align: center;
 	font-weight: 600;
+	font-size: 1.9em;
 }
 
 .form-popup-addcard {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	gap: 2px;
-	padding: 15px 30px;
+	gap: 2em;
+}
+
+.form-popup-addcard div {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
 }
 
 .form-popup-addcard label {
-	font-size: 18px;
-	width: 88%;
+	font-size: 1.2em;
+	display: flex;
+	flex-direction: column;
 }
 
 .form-popup-addcard input {
-	margin-bottom: 15px;	
+	min-width: min(30ch, 70vw);
 	border: none;
-	width: 80%;
-	font-size: 18px;
+	font-size: smaller;
 	outline: none;
 	padding: 10px 15px;
 	border-radius: 5px;
 	border: 2px solid #ccc;
 	border-bottom-width: 3px;
-	transition: 0.2s;
+	transition: background-color 0.3s, border-color 0.2s;
 }
 
 .form-popup-addcard input:focus {
@@ -134,50 +148,46 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 #submit-popup-addcard {	
-	margin-top: 15px;
+	margin-inline: auto;
+	padding: 0.5em 2em;
 	border: none;
-	height: 50px;
-	width: 60%;
 	background-color: var(--color-green);
-	font-size: 25px;
+	font-size: 1.4em;
 	font-family: 'Poppins', sans-serif;
 	color: white;
-	transition: 0.3s;
+	transition: background-color 0.1s;
 	cursor: pointer;
 	border-radius: 5px;
 }
 
+#submit-popup-addcard span {
+	transition: scale 100ms ease-in-out;
+	display: block;
+}
+
 #submit-popup-addcard:hover {
 	background-color: var(--color-green-hover);
-	font-size: 24px;
+}
+
+#submit-popup-addcard:hover span {
+	scale: 0.95;
 }
 
 /*-------------------- Main --------------------*/
 
-header {
-	height: 120px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
 .logo {
-	height: 60px;
-	display: flex;
-	flex-direction: row;
-	align-items: baseline;
+	width: fit-content;
+	display: inline-block;
+	margin-inline: auto;
 }
 
 .logo-password {
-	height: 50px;
-	font-size: 50px;
+	font-size: 3em;
 	color: var(--color-green);
 }
 
 .logo-manager {
-	height: 35px;
-	font-size: 35px;
+	font-size: 2em;
 	color: var(--color-beige);
 }
 
@@ -281,53 +291,4 @@ main {
 	}
 }
 
-@media screen and (min-width: 0px) and (max-width: 500px) {
-	#cards li:not(:first-child) {
-		width: 300px;
-		height: 180px;
-	}
 
-	.logo {
-		height: 60px;
-		display: flex;
-		flex-direction: column;
-		align-items: baseline;
-	}
-
-	#button-addcard {
-		width: 300px;
-		height: 180px;
-	}
-
-	#popup-addcard {
-		width: 300px;
-		height: 525px;
-	}
-	
-	#closer-popup-addcard {
-		left: 255px;
-	}
-
-	#cards li h2 {
-		margin-bottom: 0px;
-	}
-
-	#cards li p {
-		font-size: 14px;
-		margin-top: 13px;
-	}
-
-	#popup-addcard h2 {
-		font-size: 25px;
-		margin-bottom: 10px;
-	}
-
-	.form-popup-addcard input {
-		margin-bottom: 15px;	
-		font-size: 15px;
-	}
-
-	.form-popup-addcard label {
-		font-size: 15px;
-	}
-}

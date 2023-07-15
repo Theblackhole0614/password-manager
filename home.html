@@ -15,23 +15,28 @@
 			</button>
 			<h2>New Card</h2>
 			<form class="form-popup-addcard" name="card-create">
-				<label for="title">Title</label>
-				<input type="text" id="title-input-addcard" placeholder="Enter a title" name="title">
-				<label for="username">Username</label>
-				<input type="text" id="username-input-addcard" placeholder="Enter an username" name="username">
-				<label for="email">Email</label>
-				<input type="email" id="email-input-addcard" placeholder="joe@example.com" name="email">
-				<label for="password">Password</label>
-				<input type="password" id="password-input-addcard" placeholder="Enter a password" name="password">
-				<button id="submit-popup-addcard">Add Card</button>
+				<div>
+					<label for="title">Title
+						<input type="text" id="title" placeholder="Enter a title" name="title">
+					</label>
+					<label for="username">Username
+						<input type="text" id="username" placeholder="Enter an username" name="username">
+					</label>
+					<label for="email">Email
+						<input type="email" id="email" placeholder="joe@example.com" name="email">
+					</label>
+					<label for="password">Password
+						<input type="password" id="password" placeholder="Enter a password" name="password">
+					</label>
+				</div>
+				<button id="submit-popup-addcard"><span>Add Card</span></button>
 			</form>
 		</section>
 	</div>
 	<header>
-		<div class="logo">
-			<span class="logo-password">Password</span>
-			<span class="logo-manager">Manager</span>
-		</div>
+		<h1 class="logo">
+			<span class="logo-password">Password</span><wbr><span class="logo-manager">Manager</span>
+		</h1>
 	</header>
 	<main>
 		<ul id="cards">
