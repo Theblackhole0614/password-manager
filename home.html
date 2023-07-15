@@ -8,21 +8,21 @@
 	<script defer src="script.js"></script>
 </head>
 <body>
-	<div id="background-popup-addcard" class="background-popup-addcard">
+	<div id="background-popup-addcard" class="background-popup-addcard hidden">
 		<section id="popup-addcard">
 			<button id="closer-popup-addcard" aria-label="close popup">
 				<img src="./assets/close.svg" alt="close popup" aria-hidden="true">
 			</button>
 			<h2>New Card</h2>
-			<form id="form-popup-addcard">
+			<form class="form-popup-addcard" name="card-create">
 				<label for="title">Title</label>
-				<input type="text" id="title-input-addcard" placeholder="Enter an title" name="title">
+				<input type="text" id="title-input-addcard" placeholder="Enter a title" name="title">
 				<label for="username">Username</label>
 				<input type="text" id="username-input-addcard" placeholder="Enter an username" name="username">
 				<label for="email">Email</label>
-				<input type="email" id="email-input-addcard" placeholder="Enter an email" name="email">
+				<input type="email" id="email-input-addcard" placeholder="joe@example.com" name="email">
 				<label for="password">Password</label>
-				<input type="password" id="password-input-addcard" placeholder="Enter an password" name="password">
+				<input type="password" id="password-input-addcard" placeholder="Enter a password" name="password">
 				<button id="submit-popup-addcard">Add Card</button>
 			</form>
 		</section>

@@ -6,41 +6,36 @@ const buttonAddCard = document.getElementById('button-addcard')
 const backgroundPopupAddCard = document.getElementById('background-popup-addcard')
 const popupAddCard = document.getElementById('popup-addcard')
 const closerPopupAddCard = document.getElementById('closer-popup-addcard')
-const formPopupAddCard = document.getElementById('form-popup-addcard')
+const formPopupAddCard = document.forms['card-create']
 const submitPopupAddCard = document.getElementById('submit-popup-addcard')
-
-const titleInputPopupAddCard = document.getElementById('title-input-addcard')
-const usernameInputPopupAddCard = document.getElementById('username-input-addcard')
-const emailInputPopupAddCard = document.getElementById('email-input-addcard')
-const passwordInputPopupAddCard = document.getElementById('password-input-addcard')
 
 // Cancel submit  
 formPopupAddCard.addEventListener('submit', event => {
 	event.preventDefault()
+	addCard()
 })
 
 // Popup visibility
-backgroundPopupAddCard.classList.add("hiden");
-
 function showPopup() {
-	backgroundPopupAddCard.classList.remove("hiden");
+	backgroundPopupAddCard.classList.remove("hidden");
 }
 
 function hidePopup() {
-	backgroundPopupAddCard.classList.add("hiden");
+	backgroundPopupAddCard.classList.add("hidden");
 }
 
 // Add card fonctionality
 function addCard() {
 	hidePopup()
+	const formData = new FormData(formPopupAddCard);
 	const cardTitle = document.createElement('h2')
-	cardTitle.textContent = titleInputPopupAddCard.value
+	cardTitle.textContent = formData.get('title')
 	const cardUsername = document.createElement('p')
-	cardUsername.textContent = `Username : ${usernameInputPopupAddCard.value}`
+	cardUsername.textContent = `Username : ${formData.get('username')}`
 	const cardEmail = document.createElement('p')
-	cardEmail.textContent = `Email : ${emailInputPopupAddCard.value}`
+	cardEmail.textContent = `Email : ${formData.get('email')}`
 	const cardPassword = document.createElement('p')
-	cardPassword.textContent = `Password : ${passwordInputPopupAddCard.value}`
+	cardPassword.textContent = `Password : ${formData.get('password')}`
 	formPopupAddCard.reset()
 	const cardLi = document.createElement('li')
 	cardLi.appendChild(cardTitle)
@@ -55,4 +50,3 @@ buttonAddCard.addEventListener('click', showPopup)
 
 // Popup events
 closerPopupAddCard.addEventListener('click', hidePopup)
-submitPopupAddCard.addEventListener('click', addCard)

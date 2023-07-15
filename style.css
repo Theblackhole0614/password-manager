@@ -10,15 +10,36 @@
 	--color-blur: #0000005e;
 }
 
-html, body {
+*, *::after, *::before {
 	box-sizing: border-box;
-	width: 100%;
+}
+
+html {
 	height: 100%;
-	overflow-x: hidden;
+	/* overflow-y: hidden; */
+}
+
+body {
+	height: 100%;
 	margin: 0;
-	padding: 0;
+	overflow-x: hidden;
 	background-color: var(--color-blue);
 	font-family: 'Poppins', sans-serif;
+	line-height: 1.5;
+  	-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+}
+
+input, button, textarea, select {
+	font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
 }
 
 /*-------------------- Popup addcard --------------------*/
@@ -34,12 +55,11 @@ html, body {
 	align-items: center;
 }
 
-.hiden {
+.hidden {
 	display: none;
 }
 
 #popup-addcard {
-	z-index: 3;
 	width: 450px;
 	height: 550px;
 	background-color: var(--color-beige);
@@ -77,7 +97,7 @@ html, body {
 	font-weight: 600;
 }
 
-#form-popup-addcard {
+.form-popup-addcard {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -86,12 +106,12 @@ html, body {
 	padding: 15px 30px;
 }
 
-#form-popup-addcard label {
+.form-popup-addcard label {
 	font-size: 18px;
 	width: 88%;
 }
 
-#form-popup-addcard input {
+.form-popup-addcard input {
 	margin-bottom: 15px;	
 	border: none;
 	width: 80%;
@@ -104,8 +124,13 @@ html, body {
 	transition: 0.2s;
 }
 
-#form-popup-addcard input:focus {
+.form-popup-addcard input:focus {
 	border-color: var(--color-green);
+}
+
+.form-popup-addcard input:invalid {
+	border-color: #900;
+	background-color: #fdd;
 }
 
 #submit-popup-addcard {	
@@ -135,7 +160,6 @@ header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin: 30px 0;
 }
 
 .logo {
@@ -298,12 +322,12 @@ main {
 		margin-bottom: 10px;
 	}
 
-	#form-popup-addcard input {
+	.form-popup-addcard input {
 		margin-bottom: 15px;	
 		font-size: 15px;
 	}
 
-	#form-popup-addcard label {
+	.form-popup-addcard label {
 		font-size: 15px;
 	}
 }
