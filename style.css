@@ -33,7 +33,7 @@ body {
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.4;
   	-webkit-font-smoothing: antialiased;
-	scrollbar-gutter: stable;
+	scrollbar-gutter: stable both-edges;
 }
 
 img, picture, video, canvas, svg {
@@ -54,8 +54,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .background-popup-addcard {
 	z-index: 2;
 	position: fixed;
-	width: 100vw;
-	height: 100vh;
+	inset: 0;
 	background-color: var(--color-blur);
 	display: flex;
 	justify-content: center;
@@ -175,43 +174,53 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /*-------------------- Main --------------------*/
 
-.logo {
-	width: fit-content;
-	display: inline-block;
+h1.logo {
+	margin-block: 0;
+	max-width: min-content;
 	margin-inline: auto;
+	line-height: 1em;
+	overflow-wrap: normal;
+	padding-block-start: 1em;
+	padding-inline: 1em;
+	font-size: clamp(1em, 10vw, 2em);
+}
+
+@media screen and (min-width: 500px) {
+	h1.logo {
+		max-width: max-content;
+	}
 }
 
 .logo-password {
-	font-size: 3em;
+	font-size: 1.5em;
 	color: var(--color-green);
 }
 
 .logo-manager {
-	font-size: 2em;
 	color: var(--color-beige);
 }
 
 main {
+	--gap: min(3rem, 8vw);
 	height: fit-content;
-	padding: 35px;
+	padding: var(--gap);
 }
 
 #cards {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-	grid-gap: 50px;
+	grid-gap: var(--gap);
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
 #button-addcard {
-	margin: auto;
-	width: 400px;
-	height: 220px;
+	width: 100%;
+	height: 100%;
 	border-radius: 10px;
 	border: none;
-	background-color: var(--color-transparent);
+	background-color: transparent;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -234,13 +243,18 @@ main {
 	scale: 1.3;
 }
 
-#cards li:not(:first-child) {
+#cards li {
 	margin: auto;
-	width: 400px;
-	height: 220px;
+	width: 100%;
+	aspect-ratio: 16/9;
+	max-width: 400px;
 	background-color: var(--color-beige);
 	border-radius: 10px;
 	animation: append-animate .4s ease-out;
+}
+
+#cards li:first-child {
+	background-color: var(--color-transparent);
 }
 
 @keyframes append-animate {
@@ -290,5 +304,3 @@ main {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
-
-
