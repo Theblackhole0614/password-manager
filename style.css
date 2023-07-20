@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-
-/* 
-#CE7DA5 
-
-*/
-
 :root {
-	--color-blue: #493657;
-	--color-green: #CE7DA5;
-	--color-green-hover: #007e43;
-	--color-beige: #C6B1B2;
+	--background-color-primary: #493657;
+	--color-primary: #CE7DA5;
+	--color-primary-hover: #a75e82;
+	--color-secondary: #C6B1B2;
 	--color-transparent: #ffffff1a;
 	--color-transparent-hover: #ffffff23;
 	--color-blur: #0000005e;
@@ -29,7 +23,7 @@ body {
 	height: 100vh;
 	margin: 0;
 	overflow-y: auto;
-	background-color: var(--color-blue);
+	background-color: var(--background-color-primary);
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.4;
   	-webkit-font-smoothing: antialiased;
@@ -51,7 +45,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /*-------------------- Popup addcard --------------------*/
 
-.background-popup-addcard {
+.popup__blur {
 	z-index: 2;
 	position: fixed;
 	inset: 0;
@@ -65,9 +59,9 @@ p, h1, h2, h3, h4, h5, h6 {
 	display: none;
 }
 
-#popup-addcard {
+.popup {
 	padding: 2.3em;
-	background-color: var(--color-beige);
+	background-color: var(--color-secondary);
 	display: flex;
 	position: relative;
 	flex-direction: column;
@@ -76,9 +70,7 @@ p, h1, h2, h3, h4, h5, h6 {
 	max-width: 95vw;
 }
 
-#closer-popup-addcard {
-	width: 40px;
-	height: 40px;
+.popup__cross {
 	position: absolute;
 	top: 5px;
     right: 5px;
@@ -88,69 +80,68 @@ p, h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 }
 
-#closer-popup-addcard img {
-	width: 40px;
-	height: 40px;
+.popup__cross img {
+	width: 3rem;
+	height: 3rem;
 	transition: 0.3s;
 }
 
-#closer-popup-addcard img:hover {
+.popup__cross img:hover {
 	scale: 1.1;
 }
 
-#popup-addcard h2 {
+.popup h2 {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	font-weight: 600;
 	font-size: 1.9em;
 }
 
-.form-popup-addcard {
+.popup__form {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 2em;
 }
 
-.form-popup-addcard div {
+.popup__form div {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 0.8em;
 }
 
-.form-popup-addcard label {
+.popup__form label {
 	font-size: 1.2em;
 	display: flex;
 	flex-direction: column;
 }
 
-.form-popup-addcard input {
+.popup__form input {
 	min-width: min(30ch, 70vw);
 	border: none;
 	font-size: smaller;
 	outline: none;
-	padding: 10px 15px;
+	padding: 0.7em 1em;
 	border-radius: 5px;
 	border: 2px solid #ccc;
 	border-bottom-width: 3px;
 	transition: background-color 0.3s, border-color 0.2s;
 }
 
-.form-popup-addcard input:focus {
-	border-color: var(--color-green);
+.popup__form input:focus {
+	border-color: var(--color-primary);
 }
 
-.form-popup-addcard input:invalid {
+.popup__form input:invalid {
 	border-color: #900;
 	background-color: #fdd;
 }
 
-#submit-popup-addcard {	
+.popup__submit {	
 	margin-inline: auto;
 	padding: 0.5em 2em;
 	border: none;
-	background-color: var(--color-green);
+	background-color: var(--color-primary);
 	font-size: 1.4em;
 	font-family: 'Poppins', sans-serif;
 	color: white;
@@ -159,16 +150,16 @@ p, h1, h2, h3, h4, h5, h6 {
 	border-radius: 5px;
 }
 
-#submit-popup-addcard span {
+.popup__submit span {
 	transition: scale 100ms ease-in-out;
 	display: block;
 }
 
-#submit-popup-addcard:hover {
-	background-color: var(--color-green-hover);
+.popup__submit:hover {
+	background-color: var(--color-primary-hover);
 }
 
-#submit-popup-addcard:hover span {
+.popup__submit:hover span {
 	scale: 0.95;
 }
 
@@ -191,13 +182,13 @@ h1.logo {
 	}
 }
 
-.logo-password {
+.logo__password {
 	font-size: 1.5em;
-	color: var(--color-green);
+	color: var(--color-primary);
 }
 
-.logo-manager {
-	color: var(--color-beige);
+.logo__manager {
+	color: var(--color-secondary);
 }
 
 main {
@@ -206,7 +197,7 @@ main {
 	padding: var(--gap);
 }
 
-#cards {
+.cards {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-gap: var(--gap);
@@ -218,43 +209,44 @@ main {
 #button-addcard {
 	width: 100%;
 	height: 100%;
+	background-color: transparent;
 	border-radius: 10px;
 	border: none;
-	background-color: transparent;
+	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: 0.3s;
-	cursor: pointer;
-}
-
-#button-addcard:hover {
-	background-color: var(--color-transparent-hover);
+	padding: 0;
 }
 
 #button-addcard span{
-	font-size: 60px;
-	color: var(--color-green);
-	transition: 0.5s;
+	font-size: 4em;
+	color: var(--color-primary);
+	transition: 0.1s;
 }
 
-#button-addcard:hover span{
-	color: var(--color-green-hover);
-	scale: 1.3;
+#button-addcard:hover span {
+	color: var(--color-primary-hover);
+	scale: 1.2;
 }
 
-#cards li {
+.cards li {
 	margin: auto;
 	width: 100%;
 	aspect-ratio: 16/9;
 	max-width: 400px;
-	background-color: var(--color-beige);
+	background-color: var(--color-secondary);
 	border-radius: 10px;
 	animation: append-animate .4s ease-out;
 }
 
-#cards li:first-child {
+.cards li:first-child {
 	background-color: var(--color-transparent);
+	transition: 0.3s ease-out;
+}
+
+.cards li:first-child:hover {
+	background-color: var(--color-transparent-hover);
 }
 
 @keyframes append-animate {
@@ -262,17 +254,17 @@ main {
 	to { opacity: 1; }
 }
 
-#cards li h2 {
+.cards li h2 {
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
 	text-align: center;
 	margin-top: 25px;
 	margin-bottom: 30px;
-	color: var(--color-green);
+	color: var(--color-primary);
 }
 
-#cards li p {
+.cards li p {
 	font-size: 16px;
 	margin: 0;
 	margin-left: 30px;
@@ -282,25 +274,25 @@ main {
 /*-------------------- Responsiveness --------------------*/
 
 @media screen and (min-width: 1780px) {
-	#cards {
+	.cards {
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
 @media screen and (min-width: 1330px) and (max-width: 1780px) {
-	#cards {
+	.cards {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
 @media screen and (min-width: 880px) and (max-width: 1330px) {
-	#cards {
+	.cards {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 @media screen and (min-width: 0px) and (max-width: 880px) {
-	#cards {
+	.cards {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }

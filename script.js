@@ -3,31 +3,29 @@ const cards = document.getElementById('cards')
 const buttonAddCard = document.getElementById('button-addcard')
 
 // Popup elements
-const backgroundPopupAddCard = document.getElementById('background-popup-addcard')
-const popupAddCard = document.getElementById('popup-addcard')
-const closerPopupAddCard = document.getElementById('closer-popup-addcard')
-const formPopupAddCard = document.forms['card-create']
-const submitPopupAddCard = document.getElementById('submit-popup-addcard')
+const popupBlur = document.getElementById('popup-blur')
+const popupCross = document.getElementById('popup-cross')
+const popupForm = document.forms['card-create']
 
 // Cancel submit  
-formPopupAddCard.addEventListener('submit', event => {
+popupForm.addEventListener('submit', event => {
 	event.preventDefault()
 	addCard()
 })
 
 // Popup visibility
 function showPopup() {
-	backgroundPopupAddCard.classList.remove("hidden");
+	popupBlur.classList.remove("hidden");
 }
 
 function hidePopup() {
-	backgroundPopupAddCard.classList.add("hidden");
+	popupBlur.classList.add("hidden");
 }
 
 // Add card fonctionality
 function addCard() {
 	hidePopup()
-	const formData = new FormData(formPopupAddCard);
+	const formData = new FormData(popupForm);
 	const cardTitle = document.createElement('h2')
 	cardTitle.textContent = formData.get('title')
 	const cardUsername = document.createElement('p')
@@ -36,7 +34,7 @@ function addCard() {
 	cardEmail.textContent = `Email : ${formData.get('email')}`
 	const cardPassword = document.createElement('p')
 	cardPassword.textContent = `Password : ${formData.get('password')}`
-	formPopupAddCard.reset()
+	popupForm.reset()
 	const cardLi = document.createElement('li')
 	cardLi.appendChild(cardTitle)
 	cardLi.appendChild(cardUsername)
@@ -49,4 +47,4 @@ function addCard() {
 buttonAddCard.addEventListener('click', showPopup)
 
 // Popup events
-closerPopupAddCard.addEventListener('click', hidePopup)
+popupCross.addEventListener('click', hidePopup)

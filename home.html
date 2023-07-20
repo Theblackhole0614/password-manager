@@ -8,13 +8,13 @@
 	<script defer src="script.js"></script>
 </head>
 <body>
-	<div id="background-popup-addcard" class="background-popup-addcard hidden">
-		<section id="popup-addcard">
-			<button id="closer-popup-addcard" aria-label="close popup">
+	<div class="popup__blur hidden" id="popup-blur">
+		<section class="popup">
+			<button class="popup__cross" id="popup-cross" aria-label="close popup">
 				<img src="./assets/close.svg" alt="close popup" aria-hidden="true">
 			</button>
-			<h2>New Card</h2>
-			<form class="form-popup-addcard" name="card-create">
+			<h2 class="popup__title">New Card</h2>
+			<form class="popup__form" name="card-create">
 				<div>
 					<label for="title">Title
 						<input type="text" id="title" placeholder="Enter a title" name="title">
@@ -29,17 +29,17 @@
 						<input type="password" id="password" placeholder="Enter a password" name="password">
 					</label>
 				</div>
-				<button id="submit-popup-addcard"><span>Add Card</span></button>
+				<button class="popup__submit"><span>Add Card</span></button>
 			</form>
 		</section>
 	</div>
 	<header>
 		<h1 class="logo">
-			<span class="logo-password">Password</span><wbr><span class="logo-manager">Manager</span>
+			<span class="logo__password">Password</span><wbr><span class="logo__manager">Manager</span>
 		</h1>
 	</header>
 	<main>
-		<ul id="cards">
+		<ul class="cards" id="cards">
 			<li><button id="button-addcard"><span>+</span></button></li>
 		</ul>
 	</main>
